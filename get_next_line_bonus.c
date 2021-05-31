@@ -6,7 +6,7 @@
 /*   By: esivre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 13:55:40 by esivre            #+#    #+#             */
-/*   Updated: 2021/05/31 10:51:29 by esivre           ###   ########.fr       */
+/*   Updated: 2021/05/31 11:25:08 by esivre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ int	ft_read(int fd, char *buffer)
 
 int	get_next_line(int fd, char **line)
 {
-	static char	buffer[4096][BUFFER_SIZE + 1];
+	static char	buffer[12288][BUFFER_SIZE + 1];
 	int			rd;
 	char		*tmp;
 
-	if (fd < 0 || fd >= 4096 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd >= 12288 || BUFFER_SIZE <= 0)
 		return (-1);
 	*line = ft_strdup("");
 	if (!buffer[fd][0])

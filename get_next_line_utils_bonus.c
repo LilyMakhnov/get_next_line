@@ -6,7 +6,7 @@
 /*   By: esivre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:36:24 by esivre            #+#    #+#             */
-/*   Updated: 2021/05/31 10:26:03 by esivre           ###   ########.fr       */
+/*   Updated: 2021/05/31 11:00:30 by esivre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,25 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		*dest++ = *s1++;
 	while (*s2)
 		*dest++ = *s2++;
+	*dest = 0;
+	return (ret);
+}
+
+char	*ft_strduptochar(char *str, char a, size_t n)
+{
+	char	*dest;
+	char	*ret;
+	size_t	i;
+
+	i = 0;
+	while (str[i] != a && i < n)
+		i++;
+	dest = malloc(i + 1);
+	if (!dest)
+		return (NULL);
+	ret = dest;
+	while (*str != a && n--)
+		*dest++ = *str++;
 	*dest = 0;
 	return (ret);
 }
