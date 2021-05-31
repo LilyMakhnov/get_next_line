@@ -6,7 +6,7 @@
 /*   By: esivre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:36:24 by esivre            #+#    #+#             */
-/*   Updated: 2021/05/31 10:09:36 by esivre           ###   ########.fr       */
+/*   Updated: 2021/05/31 10:26:03 by esivre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char	*ft_strdup(const char *src)
 	int		i;
 	char	*dest;
 
+	if (!src)
+		return (NULL);
 	i = -1;
 	dest = malloc(sizeof(char) * ft_strlen(src) + 1);
 	if (!dest)
